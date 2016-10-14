@@ -8,5 +8,5 @@ $(document).ready(function() {
     }
   });
   chosen = $(".autocomplete").text();
-  Console.log(chosen);
+  console.log(chosen);
 });
