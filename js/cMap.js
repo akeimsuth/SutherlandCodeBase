@@ -7,6 +7,6 @@ $(document).ready(function() {
       "Google": 'http://placehold.it/250x250'
     }
   });
-  chosen = $("#autocomplete-input").val();
+  chosen = $(".autocomplete").text();
   Console.log(chosen);
 });
