@@ -1,3 +1,4 @@
+$(document).ready(function() {
   $('input.autocomplete').autocomplete({
     data: {
       "Apple": null,
@@ -5,3 +6,4 @@
       "Google": 'http://placehold.it/250x250'
     }
   });
+});
