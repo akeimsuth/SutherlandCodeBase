@@ -50,14 +50,17 @@
 
   <!--Script that generates a map of user current location -->
     <script>
-
-      function initMap() {
         var marker1 = new google.maps.Marker({map: map});
-         if (navigator.geolocation) {
+        var lati;
+        var lon;
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
+            lati = position.coords.latitude;
+            lon = position.coords.longitude;
             var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
+              lat: lati,
+              lng: lon
             };
 
             marker1.setPosition(pos);
@@ -71,8 +74,10 @@
           handleLocationError(false, infoWindow, map.getCenter());
         }
       }
+      function initMap() {
+       
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: position.coords.latitude, lng: position.coords.longitude},
+          center: {lat: lati, lng: lon},
           zoom: 15
         });
         var infoWindow = new google.maps.InfoWindow();
@@ -102,9 +107,9 @@
           infowindow.setContent(place.name);
           infowindow.open(map, this);
         });*/
-        
+ /*       var marker1 = new google.maps.Marker({map: map});
         // Try HTML5 geolocation.
-       /* if (navigator.geolocation) {
+        if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
               lat: position.coords.latitude,
