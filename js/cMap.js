@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var chosen = "";
+  var word = "";
   $('input.autocomplete').autocomplete({
     data: {
       "Apple": null,
@@ -8,9 +9,9 @@ $(document).ready(function() {
     }
   });
   $("#autocomplete-input").change(function(){
-       chosen = $("#autocomplete-input").text();
+       chosen = $("#autocomplete-input").val();
     
   });
- console.log(chosen);
+ console.log(word.text(chosen));
   //chosen = $("#autocomplete-input").val()
   });
