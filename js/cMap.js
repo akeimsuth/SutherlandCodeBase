@@ -8,7 +8,7 @@ $(document).ready(function() {
     }
   });
   var inter = setInterval(function(){
-    chosen = chosen + 1;//$("#autocomplete-input").val();
+    chosen = $("#autocomplete-input").text();
     console.log(chosen);
 
   },1000);
