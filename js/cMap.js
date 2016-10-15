@@ -11,8 +11,8 @@ $(document).ready(function() {
   $("#autocomplete-input").change(function(){
        chosen = documentGetElementById('autocomplete-input').value 
        //$("#autocomplete-input").val();
-    
+     console.log(chosen);
   });
- console.log(chosen);
+
   //chosen = $("#autocomplete-input").val()
   });
