@@ -9,7 +9,8 @@ $(document).ready(function() {
   });
   var inter = setInterval(function(){
     chosen = $("#autocomplete-input").val();
+    console.log(chosen);
+
   },1000);
   //chosen = $("#autocomplete-input").val()
-  console.log(chosen);
-});
+  });
