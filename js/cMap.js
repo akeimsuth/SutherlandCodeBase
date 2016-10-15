@@ -15,8 +15,9 @@ $(document).ready(function() {
   // Get a reference to the database service
   var database = firebase.database();
   words = database.ref("Items");
-  words.on("value",function(snapshot){
+  database.ref("Items/flour").on("value",function(snapshot){
       console.log(snapshot.val());
+      words = snapshot.val();
   },function(err){
     console.log("Failed "+ err.code);
   });
@@ -28,9 +29,9 @@ $(document).ready(function() {
       console.log(chosen);
   });
 
- /* $('#shop').click(function(){
-    alert(chosen);
-  });*/
+  $('#shop').click(function(){
+    $('p').text("Flour is "+words);
+  });
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
       ending_top: '20%'
