@@ -7,10 +7,10 @@ $(document).ready(function() {
       "Google": 'http://placehold.it/250x250'
     }
   });
-  var inter = setInterval(function(){
-    chosen = $("#autocomplete-input").text();
-    console.log(chosen);
-
-  },1000);
+  $("#autocomplete-input").change(function(){
+       chosen = $("#autocomplete-input").text();
+    
+  });
+ console.log(chosen);
   //chosen = $("#autocomplete-input").val()
   });
