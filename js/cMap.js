@@ -32,11 +32,12 @@ $(document).ready(function() {
       var words;
         database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
       console.log(snapshot.val());
-      words = snapshot.val();
+       $('p').text(chosen+" is "+snapshot.val());
+      //words = snapshot.val();
   },function(err){
     console.log("Failed "+ err.code);
   });
-    $('p').text(chosen+" is "+words);
+   
   });
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
