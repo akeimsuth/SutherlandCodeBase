@@ -14,12 +14,8 @@ $(document).ready(function() {
 
   // Get a reference to the database service
   var database = firebase.database();
-  var userId = firebase.auth().currentUser.uid;
-  return firebase.database().ref('/Items/' + userId).once('value').then(function(snapshot) {
-  var item = snapshot.val().flour;
-  words = item;
+  words = database.ref("Items");
   console.log(words);
-    });
  
  
   $("#item").change(function(){
