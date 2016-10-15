@@ -3,11 +3,12 @@ $(document).ready(function() {
    var words = "";
    // Set the configuration for your app
   // TODO: Replace with your project's config object
-  var config = {
-    apiKey: "AIzaSyC93xr8tXeNU2M4s5xXpz0GTkOuLQElJF0",
-    authDomain: "comket.firebaseapp.com",
+   var config = {
+    apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
+    authDomain: "api-project-121750468263.firebaseapp.com",
     databaseURL: "https://api-project-121750468263.firebaseio.com",
-    storageBucket: "bucket.appspot.com"
+    storageBucket: "api-project-121750468263.appspot.com",
+    messagingSenderId: "121750468263"
   };
   firebase.initializeApp(config);
 
