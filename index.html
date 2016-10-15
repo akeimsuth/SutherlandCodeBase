@@ -76,12 +76,12 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-         infowindow = new google.maps.InfoWindow();
+        var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: pos,
           radius: 5000,
-          type: ['store']
+          types: ['store']
         }, callback);
       }
 
