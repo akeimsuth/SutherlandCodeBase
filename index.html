@@ -18,7 +18,7 @@
   </head>
   <body>
  
-
+  <!--Header-->
       <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo center"><h4>COMKET</h4></a>
@@ -28,31 +28,28 @@
         </div>
       </nav>
       
-
+  <!--Search field -->
       <div class="row">
-            <div class="input-field col s6 offset-s3">
-              <input placeholder="Let's Go Shopping!" id="item"/>
-              <a id="shop" class="waves-effect waves-light btn modal-trigger" href="#modal1">Shop</a>
-            </div>
+        <div class="input-field col s6 offset-s3">
+          <input placeholder="Let's Go Shopping!" id="item"/>
+          <a id="shop" class="waves-effect waves-light btn modal-trigger" href="#modal1">Shop</a>
+        </div>
       </div>
 
  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p></p>
-    </div>
-    <div class="modal-footer">
-      <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
+      <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
         <div id="map"></div>
 
+  <!--Script that generates a map of user current location -->
     <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {

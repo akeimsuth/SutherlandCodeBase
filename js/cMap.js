@@ -30,10 +30,10 @@ $(document).ready(function() {
 
   $('#shop').click(function(){
       var words;
-        database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
+      database.ref("Items/"+chosen.toLowerCase()+"/price").on("value",function(snapshot){
       words = snapshot.val();
       console.log(snapshot.val());
-       $('p').text(chosen+" is "+words);
+       $('p').text(chosen.toUpperCase()+" is "+words);
       //words = snapshot.val();
   },function(err){
     console.log("Failed "+ err.code);
