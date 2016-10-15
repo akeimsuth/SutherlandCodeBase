@@ -7,5 +7,9 @@ $(document).ready(function() {
       "Google": 'http://placehold.it/250x250'
     }
   });
-  console.log($("#autocomplete-input").val());
+  var inter = setInterval(function(){
+    chosen = $("#autocomplete-input").val()
+  },1000);
+  //chosen = $("#autocomplete-input").val()
+  console.log(chosen);
 });
