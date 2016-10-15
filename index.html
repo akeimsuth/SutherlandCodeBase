@@ -80,12 +80,12 @@
         var service = new google.maps.places.PlacesService(map);
         service.nearbySearch({
           location: pos,
-          radius: 500,
+          radius: 5000,
           type: ['store']
         }, callback);
       }
 
-      
+
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
