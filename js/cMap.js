@@ -6,7 +6,7 @@ $(document).ready(function() {
       console.log(chosen);
   });
 
-  $('$shop').click(function(){
+  $('#shop').click(function(){
     alert(chosen);
   });
 });
