@@ -18,7 +18,6 @@ $(document).ready(function() {
 
   // Get a reference to the database service
   var database = firebase.database();
-  words = database.ref("Items");
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
