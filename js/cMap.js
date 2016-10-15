@@ -15,7 +15,12 @@ $(document).ready(function() {
   // Get a reference to the database service
   var database = firebase.database();
   words = database.ref("Items");
-  console.log(words);
+  words.on("value",function(snapshot){
+      console.log(snapshot.val());
+  },function(err){
+    console.log("Failed "+ err.code);
+  });
+  
  
  
   $("#item").change(function(){
