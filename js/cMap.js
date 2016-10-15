@@ -9,4 +9,5 @@ $(document).ready(function() {
  /* $('#shop').click(function(){
     alert(chosen);
   });*/
+  
 });
