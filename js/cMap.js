@@ -1,6 +1,10 @@
 $(document).ready(function() {
    var chosen = "";
    var words = "";
+   $("#item").change(function(){
+      chosen = $('#item').val();
+      console.log(chosen);
+  });
    // Set the configuration for your app
   // TODO: Replace with your project's config object
    var config = {
@@ -15,7 +19,7 @@ $(document).ready(function() {
   // Get a reference to the database service
   var database = firebase.database();
   words = database.ref("Items");
-  database.ref("Items/flour/price").on("value",function(snapshot){
+  database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
       console.log(snapshot.val());
       words = snapshot.val();
   },function(err){
@@ -24,13 +28,10 @@ $(document).ready(function() {
   
  
  
-  $("#item").change(function(){
-      chosen = $('#item').val();
-      console.log(chosen);
-  });
+  
 
   $('#shop').click(function(){
-    $('p').text("Flour is "+words);
+    $('p').text(Chosen+" is "+words);
   });
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
