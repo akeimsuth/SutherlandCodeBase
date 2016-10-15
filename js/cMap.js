@@ -15,7 +15,7 @@ $(document).ready(function() {
   // Get a reference to the database service
   var database = firebase.database();
   words = database.ref("Items");
-  database.ref("Items/flour").on("value",function(snapshot){
+  database.ref("Items/flour/price").on("value",function(snapshot){
       console.log(snapshot.val());
       words = snapshot.val();
   },function(err){
