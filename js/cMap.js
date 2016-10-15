@@ -12,6 +12,6 @@ $(document).ready(function() {
        chosen = $("#autocomplete-input").val();
     
   });
- console.log(word.text(chosen));
+ console.log(chosen);
   //chosen = $("#autocomplete-input").val()
   });
