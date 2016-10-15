@@ -9,5 +9,8 @@ $(document).ready(function() {
  /* $('#shop').click(function(){
     alert(chosen);
   });*/
-  $('.modal-trigger').leanModal();
+  $('.modal-trigger').leanModal({
+      starting_top: '10%', // Starting top style attribute
+      ending_top: '20%'
+  });
 });
