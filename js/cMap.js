@@ -1,6 +1,5 @@
 $(document).ready(function() {
    var chosen = "";
-   var words = "";
   /* $("#item").change(function(){
       chosen = $('#item').val();
       console.log(chosen);
@@ -17,7 +16,7 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   // Get a reference to the database service
-  
+   var database = firebase.database();
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
@@ -30,7 +29,7 @@ $(document).ready(function() {
   
 
   $('#shop').click(function(){
-    var database = firebase.database();
+      var words;
         database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
       console.log(snapshot.val());
       words = snapshot.val();
