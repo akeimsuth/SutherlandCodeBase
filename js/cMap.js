@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var chosen;
+  var chosen = "";
   $('input.autocomplete').autocomplete({
     data: {
       "Apple": null,
