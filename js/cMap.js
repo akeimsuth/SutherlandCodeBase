@@ -1,10 +1,10 @@
 $(document).ready(function() {
    var chosen = "";
    var words = "";
-   $("#item").change(function(){
+  /* $("#item").change(function(){
       chosen = $('#item').val();
       console.log(chosen);
-  });
+  });*/
    // Set the configuration for your app
   // TODO: Replace with your project's config object
    var config = {
@@ -20,6 +20,8 @@ $(document).ready(function() {
   var database = firebase.database();
   words = database.ref("Items");
   $('#item').change(function(){
+    chosen = $('#item').val();
+    console.log(chosen);
      database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
       console.log(snapshot.val());
       words = snapshot.val();
