@@ -22,12 +22,7 @@ $(document).ready(function() {
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
-     database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
-      console.log(snapshot.val());
-      words = snapshot.val();
-  },function(err){
-    console.log("Failed "+ err.code);
-  });
+ 
   });
  
   
@@ -36,6 +31,12 @@ $(document).ready(function() {
   
 
   $('#shop').click(function(){
+        database.ref("Items/"+chosen+"/price").on("value",function(snapshot){
+      console.log(snapshot.val());
+      words = snapshot.val();
+  },function(err){
+    console.log("Failed "+ err.code);
+  });
     $('p').text(chosen+" is "+words);
   });
   $('.modal-trigger').leanModal({
