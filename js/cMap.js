@@ -9,5 +9,5 @@ $(document).ready(function() {
  /* $('#shop').click(function(){
     alert(chosen);
   });*/
-  
+  $('.modal-trigger').leanModal();
 });
