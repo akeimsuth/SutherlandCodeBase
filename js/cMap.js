@@ -31,7 +31,7 @@ $(document).ready(function() {
   
 
   $('#shop').click(function(){
-    $('p').text(Chosen+" is "+words);
+    $('p').text(chosen+" is "+words);
   });
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
