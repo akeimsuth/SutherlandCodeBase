@@ -19,8 +19,8 @@ $(document).ready(function() {
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
-    choice();
   });
+  //loop through database and gets info based on what is entered by user
   var choice = function(){
     data = database.ref("/stores");
     data.on("value",function(snapshot){
@@ -39,20 +39,14 @@ $(document).ready(function() {
           console.log("Not Found!");
         }
       });
-    });
+    },function(err){ //error message if unable to access data
+        console.log("Failed "+ err.code);
   }
   
   //when button is clicked shows info based on text that inputted.
-/*  $('#shop').click(function(){
-      var words;
-      database.ref("Items/"+chosen.toLowerCase()+"/price").on("value",function(snapshot){
-          words = snapshot.val();
-          console.log(snapshot.val());
-          $('p').text(chosen.toUpperCase()+" is "+words);
-          },function(err){
-            console.log("Failed "+ err.code);
-      });
-  });*/
+  $('#shop').click(function(){
+     choice();
+  });
   //shows info on the text entered input field
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
