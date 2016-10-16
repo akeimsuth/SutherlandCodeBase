@@ -1,6 +1,6 @@
 $(document).ready(function() {
    var chosen = "";
-   
+   var data;
   //configuration for firebase app
    var config = {
     apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
@@ -20,8 +20,15 @@ $(document).ready(function() {
     console.log(chosen);
  
   });
+  var choice = function(){
+    data = database.ref("/stores");
+    data.on("value",function(){
+      console.log(snapshot.val());
+    });
+  }
+  choice();
   //when button is clicked shows info based on text that inputted.
-  $('#shop').click(function(){
+/*  $('#shop').click(function(){
       var words;
       database.ref("Items/"+chosen.toLowerCase()+"/price").on("value",function(snapshot){
           words = snapshot.val();
@@ -30,7 +37,7 @@ $(document).ready(function() {
           },function(err){
             console.log("Failed "+ err.code);
       });
-  });
+  });*/
   //shows info on the text entered input field
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
