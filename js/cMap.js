@@ -25,11 +25,9 @@ $(document).ready(function() {
     data = database.ref("/stores");
     data.on("value",function(snapshot){
       console.log(snapshot.val());
-      snapshot.forEach(function(keys){
+      snapshot.forEach(function(keys,value){
         if(chosen in keys.val()){
-            keys.forEach(function(value){
-                console.log(value.val())
-            });
+           console.log(value);
         }else{
           console.log("Not Found!");
         }
