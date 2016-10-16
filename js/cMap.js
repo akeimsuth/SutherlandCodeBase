@@ -24,10 +24,9 @@ $(document).ready(function() {
   var choice = function(){
     data = database.ref("/stores");
     data.on("value",function(snapshot){
-      console.log(snapshot.key());
+      console.log(snapshot.val());
       snapshot.forEach(function(keys){
         console.log(keys.val());
-        console.log(keys.key());
       });
     });
   }
