@@ -40,7 +40,7 @@ $(document).ready(function() {
         }
       });
     },function(err){ //error message if unable to access data
-        console.log("Failed "+ err.code);
+        console.log("Failed "+ err.code});
   }
   
   //when button is clicked shows info based on text that inputted.
