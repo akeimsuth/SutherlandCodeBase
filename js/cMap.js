@@ -23,7 +23,7 @@ $(document).ready(function() {
   var choice = function(){
     data = database.ref("/stores");
     data.on("value",function(snapshot){
-      if(chosen in snapshot.val()){
+      if("flour" in snapshot.val()){
       console.log(snapshot.val());
     }else{
       console.log("Not Found!");
