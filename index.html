@@ -68,7 +68,7 @@
             };
 
             marker.setPosition(pos);
-  
+            
             map.setCenter(pos);
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -82,7 +82,7 @@
         service.nearbySearch({
           location: pos,
           radius: 5000,
-          types: ['hospital']
+          types: ['store']
         }, callback);
       }
 
@@ -116,7 +116,7 @@
       }
     </script>
     <script 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC93xr8tXeNU2M4s5xXpz0GTkOuLQElJF0&libraries=geometry,places&callback=initMap" async defer>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC93xr8tXeNU2M4s5xXpz0GTkOuLQElJF0&libraries=places&callback=initMap" async defer>
     </script>
 
 
