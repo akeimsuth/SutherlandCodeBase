@@ -30,9 +30,8 @@ $(document).ready(function() {
            keys.forEach(function(value){
             if(chosen == value.key){
               console.log(value.val().brand);
-              value.forEach(function(final){
-                  console.log(keys.key+" has "+value.key+" for "+final.val().price+" it's also a "+final.val().brand+" product");
-              });
+              console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+             
             }
 
            });
