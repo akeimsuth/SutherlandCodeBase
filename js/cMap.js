@@ -31,7 +31,7 @@ $(document).ready(function() {
             if(chosen == value.key){
               console.log(value.val().brand);
               value.forEach(function(final){
-                  console.log(keys.key+" has "+value.key+" for "+final.val());
+                  console.log(keys.key+" has "+value.key+" for "+final.val().price+" it's also a "+final.val().brand+" product");
               });
             }
 
