@@ -24,12 +24,11 @@ $(document).ready(function() {
   var choice = function(){
     data = database.ref("/stores");
     data.on("value",function(snapshot){
-    $.each(snapshot.val(), function(i, obj){
-   if(obj.name =='Hilo'){
-     console.log("Found!");
-   }else{
-    console.log("Not Found!");
-   }
+    console.log(snapshot.key());
+    snapshot.forEach(function(keys){
+      console.log(keys.val());
+      console.log(keys.key());
+    });
 });
     });
   }
