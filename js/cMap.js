@@ -1,11 +1,7 @@
 $(document).ready(function() {
    var chosen = "";
-  /* $("#item").change(function(){
-      chosen = $('#item').val();
-      console.log(chosen);
-  });*/
-   // Set the configuration for your app
-  // TODO: Replace with your project's config object
+   
+  //configuration for firebase app
    var config = {
     apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
     authDomain: "api-project-121750468263.firebaseapp.com",
@@ -13,35 +9,32 @@ $(document).ready(function() {
     storageBucket: "api-project-121750468263.appspot.com",
     messagingSenderId: "121750468263"
   };
+  //initializes app configuration
   firebase.initializeApp(config);
 
   // Get a reference to the database service
    var database = firebase.database();
+   //check if user enters input
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
  
   });
- 
-  
- 
- 
-  
-
+  //when button is clicked shows info based on text that inputted.
   $('#shop').click(function(){
       var words;
       database.ref("Items/"+chosen.toLowerCase()+"/price").on("value",function(snapshot){
-      words = snapshot.val();
-      console.log(snapshot.val());
-       $('p').text(chosen.toUpperCase()+" is "+words);
-      //words = snapshot.val();
-  },function(err){
-    console.log("Failed "+ err.code);
+          words = snapshot.val();
+          console.log(snapshot.val());
+          $('p').text(chosen.toUpperCase()+" is "+words);
+          },function(err){
+            console.log("Failed "+ err.code);
+      });
   });
-   
-  });
+  //shows info on the text entered input field
   $('.modal-trigger').leanModal({
       starting_top: '10%', // Starting top style attribute
       ending_top: '20%'
   });
 });
+//Use a foreach loop to get info for multiple occurrences of the text entered.
