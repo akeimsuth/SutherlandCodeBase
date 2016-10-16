@@ -29,7 +29,7 @@ $(document).ready(function() {
         if(chosen in keys.val()){
            keys.forEach(function(value){
             if(chosen == value.key){
-              console.log(value.val());
+              console.log(value.val().brand);
               value.forEach(function(final){
                   console.log(keys.key+" has "+value.key+" for "+final.val());
               });
