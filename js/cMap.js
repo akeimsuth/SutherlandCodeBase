@@ -19,7 +19,7 @@ $(document).ready(function() {
   $('#item').change(function(){
     chosen = $('#item').val();
     console.log(chosen);
- 
+    choice();
   });
   var choice = function(){
     data = database.ref("/stores");
@@ -34,7 +34,7 @@ $(document).ready(function() {
       });
     });
   }
-  choice();
+  
   //when button is clicked shows info based on text that inputted.
 /*  $('#shop').click(function(){
       var words;
