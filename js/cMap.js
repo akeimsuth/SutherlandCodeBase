@@ -28,8 +28,13 @@ $(document).ready(function() {
       snapshot.forEach(function(keys){
         if(chosen in keys.val()){
            keys.forEach(function(value){
-            if(chosen == value.key)
+            if(chosen == value.key){
               console.log(value.val());
+              value.forEach(function(final){
+                  console.log(keys.key+" has "+value.key+" for "+final.val());
+              });
+            }
+
            });
         }else{
           console.log("Not Found!");
