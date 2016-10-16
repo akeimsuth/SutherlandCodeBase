@@ -25,7 +25,7 @@ $(document).ready(function() {
     data = database.ref("/stores");
     data.on("value",function(snapshot){
     $.each(snapshot.val(), function(i, obj){
-   if(obj.name =='flour'){
+   if(obj.name =='Hilo'){
      console.log("Found!");
    }else{
     console.log("Not Found!");
