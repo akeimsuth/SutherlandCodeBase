@@ -26,8 +26,13 @@ $(document).ready(function() {
     data.on("value",function(snapshot){
       console.log(snapshot.val());
       snapshot.forEach(function(keys){
-        if("flour" in keys.val())
-            console.log("Found It");
+        if(chosen in keys.val()){
+            keys.forEach(function(value){
+                console.log(value.val())
+            });
+        }else{
+          console.log("Not Found!");
+        }
       });
     });
   }
