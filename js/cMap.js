@@ -27,7 +27,9 @@ $(document).ready(function() {
       console.log(snapshot.val());
       snapshot.forEach(function(keys){
         if(chosen in keys.val()){
-           console.log(keys.val());
+           keys.forEach(function(value){
+            console.log(value.key);
+           });
         }else{
           console.log("Not Found!");
         }
