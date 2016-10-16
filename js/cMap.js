@@ -1,6 +1,7 @@
 $(document).ready(function() {
    var chosen = "";
    var data;
+   var key;
   //configuration for firebase app
    var config = {
     apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
@@ -23,11 +24,13 @@ $(document).ready(function() {
   var choice = function(){
     data = database.ref("/stores");
     data.on("value",function(snapshot){
-      if("flour" in snapshot.val()){
-      console.log(snapshot.val());
-    }else{
-      console.log("Not Found!");
-    }
+    $.each(snapshot.val(), function(i, obj){
+   if(obj.name =='flour'){
+     console.log("Found!");
+   }else{
+    console.log("Not Found!");
+   }
+});
     });
   }
   choice();
