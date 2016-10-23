@@ -2,7 +2,7 @@ $(document).ready(function() {
    var chosen = "";
    var data;
    var key;
-   var store =  [5];
+   var store =  new Object();
   //configuration for firebase app
    var config = {
     apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
@@ -30,10 +30,13 @@ $(document).ready(function() {
         if(chosen in keys.val()){
            keys.forEach(function(value){
             if(chosen == value.key){
-              $('.info').text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
               //console.log(value.val().brand);
               //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
-              $('.info1').text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+              store.key = keys.key;
+              store.item = value.key;
+              store.price = value.val().price;
+              store.brand = value.val().brand;
+              
               //$('.info').clone().appendTo('.duplicate');
             }
 
@@ -50,6 +53,10 @@ $(document).ready(function() {
   //when button is clicked shows info based on text that inputted.
   $('#shop').click(function(){
      choice();
+     $.each(store,function(){
+        $('.info').text(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
+     });
+     
   });
   //shows info on the text entered input field
   $('.modal-trigger').leanModal({
