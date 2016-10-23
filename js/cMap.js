@@ -32,18 +32,12 @@ $(document).ready(function() {
             if(chosen == value.key){
               //console.log(value.val().brand);
               //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
-              store.key = keys.key;
-              store.item = value.key;
-              store.price = value.val().price;
-              store.brand = value.val().brand;
-              
+       
+              $("p").text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
               //$('.info').clone().appendTo('.duplicate');
             }
 
            });
-        $.each(store,function(){
-            $("p").text(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
-        });
         }else{
           console.log("Not Found!");
         }
@@ -56,8 +50,6 @@ $(document).ready(function() {
   //when button is clicked shows info based on text that inputted.
   $('#shop').click(function(){
      choice();
-
-     
   });
   //shows info on the text entered input field
   $('.modal-trigger').leanModal({
