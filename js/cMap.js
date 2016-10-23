@@ -54,7 +54,7 @@ $(document).ready(function() {
   $('#shop').click(function(){
      choice();
      $.each(store,function(){
-        $('.info').text(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
+        console.log(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
      });
      
   });
