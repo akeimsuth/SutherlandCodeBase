@@ -41,6 +41,9 @@ $(document).ready(function() {
             }
 
            });
+        $.each(store,function(){
+            console.log(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
+        });
         }else{
           console.log("Not Found!");
         }
@@ -53,9 +56,7 @@ $(document).ready(function() {
   //when button is clicked shows info based on text that inputted.
   $('#shop').click(function(){
      choice();
-     $.each(store,function(){
-        console.log(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
-     });
+
      
   });
   //shows info on the text entered input field
