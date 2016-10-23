@@ -31,7 +31,7 @@ $(document).ready(function() {
             if(chosen == value.key){
               console.log(value.val().brand);
               //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
-              $(".info").text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+              $('.info').text("hi");
             }
 
            });
