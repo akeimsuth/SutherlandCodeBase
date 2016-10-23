@@ -29,6 +29,7 @@ $(document).ready(function() {
       snapshot.forEach(function(keys){
         if(chosen in keys.val()){
            keys.forEach(function(value){
+            $("p").text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
             if(chosen == value.key){
               //console.log(value.val().brand);
               //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
