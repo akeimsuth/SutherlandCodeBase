@@ -2,6 +2,7 @@ $(document).ready(function() {
    var chosen = "";
    var data;
    var key;
+   var store =  [5];
   //configuration for firebase app
    var config = {
     apiKey: "AIzaSyBoR59zzr2puuphhOJHh6elhg61d8InGnU",
@@ -29,10 +30,11 @@ $(document).ready(function() {
         if(chosen in keys.val()){
            keys.forEach(function(value){
             if(chosen == value.key){
-              console.log(value.val().brand);
-              console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
               $('.info').text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
-              $('.info').clone().appendTo('.duplicate');
+              //console.log(value.val().brand);
+              //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+              $('.info1').text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+              //$('.info').clone().appendTo('.duplicate');
             }
 
            });
