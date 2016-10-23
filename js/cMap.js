@@ -33,7 +33,7 @@ $(document).ready(function() {
               //console.log(value.val().brand);
               //console.log(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
        
-              alert(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
+              $("p").text(keys.key+" has "+value.key+" for "+value.val().price+" it's also a "+value.val().brand+" product");
               //$('.info').clone().appendTo('.duplicate');
             }
 
