@@ -42,7 +42,7 @@ $(document).ready(function() {
 
            });
         $.each(store,function(){
-            $('.info').text(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
+            $("p").text(store.key+" has "+store.item+" for "+store.price+" it's also a "+store.brand+" product");
         });
         }else{
           console.log("Not Found!");
