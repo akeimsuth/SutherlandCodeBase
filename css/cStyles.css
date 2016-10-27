@@ -6,3 +6,8 @@
       #map {
         height: 100%;
       }
+      nav a.button-collapse{
+      	display: block !important;
+      	padding-left: 10%;
+
+      }

@@ -5,8 +5,10 @@
        <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+       <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
     <link href="css/cStyles.css" rel="stylesheet">
+
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
          
@@ -21,43 +23,76 @@
   <!--Header-->
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center"><h4>COMKET</h4></a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-          
-          </ul>
+          <div class="row">
+            <div class="col-6-md">
+              <a href="#" class="brand-logo center "><h4>COMKET</h4></a>
+            </div>
+            <div class="col-6-md">
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">shopping_basket</i></a>
+            </div>
+          </div>
         </div>
       </nav>
-      
+       
   <!--Search field -->
-      <div class="row">
+      <div class="row"> 
+
         <div class="input-field col s6 offset-s3">
           <input placeholder="Let's Go Shopping!" id="item"/>
-          <a id="shop" class="waves-effect waves-light btn modal-trigger" href="#modal1">Shop</a>
+          <a id="shop" class="waves-effect waves-light btn modal-trigger2" href="#modal2"><i class="material-icons">shopping_cart</i>1</a>
+          <a class="modal-trigger1 waves-effect waves-light btn" href="#modal1"><i class="material-icons">shopping_cart</i>2</a>
         </div>
       </div>
 
- <!-- Modal Structure -->
-      <div id="modal1" class="modal bottom-sheet">
+  <!-- Side Menu that will house the items added to cart -->
+      <ul id="slide-out" class="side-nav">
+        <li><div class="userView">
+          <img class="background" src="images/office.jpg">
+          <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+          <a href="#!name"><span class="white-text name">John Doe</span></a>
+          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect">Third Link With Waves</a></li>
+      </ul>
+  
+
+  <!-- Pop Up Modal Structure, this will house the items to choose from -->
+      <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+        </div>
+      </div>
+
+ <!-- Bottom Screen Modal Structure, still deciding what to do -->
+      <div id="modal2" class="modal bottom-sheet">
         <div class="modal-content">
           <div id = "duplicate" class="col s12 m7">
-    <h2 class="header">Grocery Items</h2>
-    <div class="card horizontal">
-      <div class="card-image">
-        <img src="http://lorempixel.com/100/190/nature/6">
-      </div>
-      <div class="card-stacked">
-        <div class="card-content">
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-  </div>
+            <h2 class="header">Grocery Items</h2>
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="http://lorempixel.com/100/190/nature/6">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <a class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>

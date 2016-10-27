@@ -54,9 +54,14 @@ $(document).ready(function() {
      choice();
   });
   //shows info on the text entered input field
-  $('.modal-trigger').leanModal({
-      starting_top: '10%', // Starting top style attribute
-      ending_top: '20%'
-  });
+  $('.modal-trigger1').leanModal();
+  $('.modal-trigger2').leanModal();
+
+  $('.button-collapse').sideNav({
+      menuWidth: 400, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
 });
 //Use a foreach loop to get info for multiple occurrences of the text entered.
