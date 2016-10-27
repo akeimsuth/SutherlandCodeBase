@@ -3,7 +3,7 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(fonts/roboto/materialFonts.woff2);
+  src: url(fonts/roboto) format('woff2');
 }
 
 .material-icons {
