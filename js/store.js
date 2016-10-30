@@ -15,7 +15,7 @@ var test = function(){
 	angular.forEach(fb,function(values,keys){
 		if($scope.item in values){
 			
-			var item = $scope.item;
+			var item.toLowerCase() = $scope.item;
 			$scope.objects =
 			{name : keys,
 			product : item,
@@ -31,7 +31,7 @@ $scope.butt = function(){
 };
 
 $scope.addToCart = function(){
-	
+
 };
 
 $scope.calculateAll = function(){
