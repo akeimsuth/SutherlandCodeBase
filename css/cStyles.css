@@ -11,3 +11,6 @@
      nav a.button-collapse {
       	display: block !important;
       }
+      .ic{
+      	float:right;
+      }
