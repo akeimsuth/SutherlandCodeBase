@@ -70,9 +70,10 @@
         </div>
           <h5>Cart items</h5>
     <div class="card vertical">
-              
+              {{empty}}
               <div class="card-stacked col s6 m3" ng-repeat="item in cart">
                 <div class="card-content">
+
                   <p><img src="images/{{item.name}}.png"></p>
                   <p>Product:{{item.product}}</p>
                   <p>Brand:{{item.brand}}</p>
@@ -124,9 +125,9 @@
               <div class="card-stacked lst" ng-repeat="x in one">
                 <div class="card-content">
                   <p><img src="images/{{x.name}}.png"></p>
-                  <p>Product:{{x.product}}</p>
-                  <p>Brand:{{x.brand}}</p>
-                  <p>Price:{{x.price}}</p>
+             <!--      <p>Product:{{x.product}}</p>
+                  <p>Brand:{{x.brand}}</p> -->
+                  <p>{{x.price}}</p>
                 </div>
                 <div class="card-action">
                   <a href="" ng-click="addToCart(x.name,x.product,x.brand,x.price)">Add To Cart</a>

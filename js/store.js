@@ -7,6 +7,7 @@ app.controller('storeController',function($scope,$firebaseObject){
 	var store = [];
 	var items = [];
 	var add = [];
+	$scope.empty = "Empty Cart";
 	$scope.one = [];
 	$scope.count = 0;
 $('#item').change(function(){
@@ -34,6 +35,7 @@ $scope.butt = function(){
 };
 
 $scope.addToCart = function(nam,prod,brands,price){
+	$scope.empty = null;
 	$scope.count += 1;
 	items = {name : nam, product: prod, brand : brands, prices: price }
 	add.push(items);
