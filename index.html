@@ -6,19 +6,28 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="css/cStyles.css" rel="stylesheet">
 
-     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
-         
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+   
+     
+     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+     
+        <script src="js/store.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/cMap.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+
+
+
  
   </head>
-  <body>
+  <body ng-app="storeApp" ng-controller="storeController">
  
   <!--Header-->
       <nav>
@@ -33,13 +42,21 @@
           </div>
         </div>
       </nav>
-       
+      <ul>
+        <li  >
+          
+         
+         
+        </li>
+      
+      </ul>
+  
   <!--Search field -->
       <div class="row"> 
-
+ 
         <div class="input-field col s6 offset-s3">
-          <input placeholder="Let's Go Shopping!" id="item"/>
-          <a id="shop" class="waves-effect waves-light btn modal-trigger2" href="#modal2"><i class="material-icons">shopping_cart</i>1</a>
+          <input placeholder="Let's Go Shopping!" id="item" ng-model="item"/>
+          <a id="shop" class="waves-effect waves-light btn modal-trigger2" href="#modal2" ng-click="butt()"><i class="material-icons">shopping_cart</i>1</a>
           <a class="modal-trigger1 waves-effect waves-light btn" href="#modal1"><i class="material-icons">shopping_cart</i>2</a>
         </div>
       </div>
@@ -47,7 +64,7 @@
   <!-- Side Menu that will house the items added to cart -->
       <ul id="slide-out" class="side-nav">
         <li><div class="userView">
-          <img class="background" src="images/office.jpg">
+          
           <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
           <a href="#!name"><span class="white-text name">John Doe</span></a>
           <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
@@ -63,8 +80,23 @@
   <!-- Pop Up Modal Structure, this will house the items to choose from -->
       <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
+          <div id = "duplicate" class="col s12 m7">
+            <h2 class="header">Grocery Items</h2>
+            <div class="card vertical">
+              
+              <div class="card-stacked" ng-repeat="x in one">
+                <div class="card-content">
+                  <p>{{x.name}}</p>
+                  <p>{{x.product}}</p>
+                  <p>{{x.brand}}</p>
+                  <p>{{x.price}}</p>
+                </div>
+                <div class="card-action">
+                  <a href="#" ng-click="addToCart()">Add To Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <a class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
@@ -76,19 +108,17 @@
         <div class="modal-content">
           <div id = "duplicate" class="col s12 m7">
             <h2 class="header">Grocery Items</h2>
-            <div class="card horizontal">
-              <div class="card-image">
-                <img src="http://lorempixel.com/100/190/nature/6">
-              </div>
-              <div class="card-stacked">
+            <div class="card vertical">
+              
+              <div class="card-stacked" ng-repeat="x in one">
                 <div class="card-content">
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                  <p></p>
+                  <p>{{x.name}}</p>
+                  <p>{{x.product}}</p>
+                  <p>{{x.brand}}</p>
+                  <p>{{x.price}}</p>
                 </div>
                 <div class="card-action">
-                  <a href="#">This is a link</a>
+                  <a href="#" ng-click="addToCart()">Add To Cart</a>
                 </div>
               </div>
             </div>
@@ -110,6 +140,7 @@
           zoom: 15
         });
         //var infoWindow = new google.maps.InfoWindow({map: map});
+        var infoWindow = new google.maps.InfoWindow();
         var marker = new google.maps.Marker({map: map});
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -118,7 +149,7 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-              var infowindow = new google.maps.InfoWindow();
+              
               
               var service = new google.maps.places.PlacesService(map);
               service.nearbySearch({
@@ -128,7 +159,7 @@
               }, callback);
 
               marker.setPosition(pos);
-            
+              marker.setIcon('https://maps.google.com/mapfiles/ms/icons/green-dot.png')
               map.setCenter(pos);
         }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
@@ -157,8 +188,8 @@
         });
 
         google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
+          infoWindow.setContent(place.name);
+          infoWindow.open(map, this);
         });
       }
 
@@ -173,6 +204,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC93xr8tXeNU2M4s5xXpz0GTkOuLQElJF0&libraries=places&callback=initMap" async defer>
     </script>
 
+ 
 
   </body>
 </html>

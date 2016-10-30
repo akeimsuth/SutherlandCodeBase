@@ -1,5 +1,5 @@
 $(document).ready(function() {
-   var chosen = "";
+  /* var chosen = "";
    var data;
    var key;
    var store =  new Object();
@@ -52,12 +52,13 @@ $(document).ready(function() {
   //when button is clicked shows info based on text that inputted.
   $('#shop').click(function(){
      choice();
-  });
+  });*/
   //shows info on the text entered input field
   $('.modal-trigger1').leanModal();
   $('.modal-trigger2').leanModal();
 
   $('.button-collapse').sideNav({
+      menuHeight: 200,
       menuWidth: 400, // Default is 240
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
