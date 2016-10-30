@@ -36,8 +36,9 @@
             <div class="col-6-md">
               <a href="#" class="brand-logo center "><h4>COMKET</h4></a>
             </div>
-            <div class="col-6-md">
+            <div class="col-2-md"><span class="new badge">{{count}}</span>
               <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">shopping_basket</i></a>
+
             </div>
           </div>
         </div>
@@ -57,7 +58,7 @@
         <div class="input-field col s6 offset-s3">
           <input placeholder="Let's Go Shopping!" id="item" ng-model="item"/>
           <a id="shop" class="waves-effect waves-light btn modal-trigger2" href="#modal2" ng-click="butt()"><i class="material-icons">shopping_cart</i>1</a>
-          <a class="modal-trigger1 waves-effect waves-light btn" href="#modal1"><i class="material-icons">shopping_cart</i>2</a>
+          <a class="modal-trigger1 waves-effect waves-light btn" href="#modal1" ng-click="butt()"><i class="material-icons">shopping_cart</i>2</a>
         </div>
       </div>
 
@@ -65,14 +66,25 @@
       <ul id="slide-out" class="side-nav">
         <li><div class="userView">          
           <a href=""><img class="circle" src="images/close.png"></a>
-          <a href="#!name"><span class="white-text name">John Doe</span></a>
-          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-        </div></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
+         
+        </div>
+          <h5>Cart items</h5>
+    <div class="card vertical">
+              
+              <div class="card-stacked col s6 m3" ng-repeat="item in cart">
+                <div class="card-content">
+                  <p><img src="images/{{item.name}}.png"></p>
+                  <p>Product:{{item.product}}</p>
+                  <p>Brand:{{item.brand}}</p>
+                  <p>Price:{{item.prices}}</p>
+                </div>
+                <div class="card-action">
+                 <!--  <a href="" ng-click="addToCart(x.product,x.brand,x.price)">Add To Cart</a> -->
+                </div>
+              </div>
+            </div>
         <li><div class="divider"></div></li>
-        <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect">Third Link With Waves</a></li>
+        
       </ul>
   
 
@@ -84,14 +96,14 @@
             <div class="card vertical">
               
               <div class="card-stacked" ng-repeat="x in one">
-                <div class="card-content">
-                  <p>{{x.name}}</p>
-                  <p>{{x.product}}</p>
-                  <p>{{x.brand}}</p>
-                  <p>{{x.price}}</p>
+                <div class="card-content lst">
+                  <p><img src="images/{{x.name}}.png"></p>
+                  <p>Product:{{x.product}}</p>
+                  <p>Brand:{{x.brand}}</p>
+                  <p>Price:{{x.price}}</p>
                 </div>
                 <div class="card-action">
-                  <a href="#" ng-click="addToCart()">Add To Cart</a>
+                  <a href="" ng-click="addToCart()">Add To Cart</a>
                 </div>
               </div>
             </div>
@@ -109,15 +121,15 @@
             <h2 class="header">Grocery Items</h2>
             <div class="card vertical">
               
-              <div class="card-stacked" ng-repeat="x in one">
+              <div class="card-stacked lst" ng-repeat="x in one">
                 <div class="card-content">
-                  <p>{{x.name}}</p>
-                  <p>{{x.product}}</p>
-                  <p>{{x.brand}}</p>
-                  <p>{{x.price}}</p>
+                  <p><img src="images/{{x.name}}.png"></p>
+                  <p>Product:{{x.product}}</p>
+                  <p>Brand:{{x.brand}}</p>
+                  <p>Price:{{x.price}}</p>
                 </div>
                 <div class="card-action">
-                  <a href="#" ng-click="addToCart()">Add To Cart</a>
+                  <a href="" ng-click="addToCart(x.name,x.product,x.brand,x.price)">Add To Cart</a>
                 </div>
               </div>
             </div>

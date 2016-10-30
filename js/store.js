@@ -5,7 +5,10 @@ app.controller('storeController',function($scope,$firebaseObject){
 	var ref = new Firebase('https://api-project-121750468263.firebaseio.com/stores');
 	var fb = $firebaseObject(ref);
 	var store = [];
+	var items = [];
+	var add = [];
 	$scope.one = [];
+	$scope.count = 0;
 $('#item').change(function(){
     store = [];
     test();
@@ -30,8 +33,12 @@ $scope.butt = function(){
 	$scope.one = store;
 };
 
-$scope.addToCart = function(){
-
+$scope.addToCart = function(nam,prod,brands,price){
+	$scope.count += 1;
+	items = {name : nam, product: prod, brand : brands, prices: price }
+	add.push(items);
+	$scope.cart = add;
+	console.log($scope.cart);
 };
 
 $scope.calculateAll = function(){
