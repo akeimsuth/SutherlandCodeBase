@@ -13,9 +13,9 @@ $('#item').change(function(){
 
 var test = function(){
 	angular.forEach(fb,function(values,keys){
-		if($scope.item in values){
+		if($scope.item.toLowerCase() in values){
 			
-			var item = $scope.item;
+			var item = $scope.item.toLowerCase();
 			$scope.objects =
 			{name : keys,
 			product : item,
